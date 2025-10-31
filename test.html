@@ -190,7 +190,7 @@
     document.getElementById('leadForm').addEventListener('submit',e=>{
       e.preventDefault();
       const data={
-        name:sanitize(name.value),phone:sanitize(phone.value),email:sanitize(email.value),
+        name:sanitize(fullname.value),phone:sanitize(phone.value),email:sanitize(email.value),
         guests:sanitize(guests.value),checkin:sanitize(checkin.value),stay:sanitize(stay.value),message:sanitize(message.value)
       };
       if(!data.fullname){status.textContent='Please enter your name.';return;}
@@ -206,6 +206,7 @@
   </script>
 </body>
 </html>
+
 
 
 
