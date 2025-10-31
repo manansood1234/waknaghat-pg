@@ -175,15 +175,15 @@
     function validatePhone(phone){const digits=(phone||'').replace(/\D/g,'');return digits.length>=10 && digits.length<=13;}
 
     function buildMessage(data){
-      let msg = `New enquiry for Waknaghat Hills PG%0A%0A`+
-        `Name: ${data.name}%0A`+
-        `Phone: ${data.phone}%0A`+
-        (data.email?`Email: ${data.email}%0A`:'')+
-        (data.guests?`Guests: ${data.guests}%0A`:'')+
-        (data.checkin?`Check-in: ${data.checkin}%0A`:'')+
-        (data.stay?`Stay: ${data.stay}%0A`:'')+
-        (data.message?`Notes: ${data.message}%0A`:'')+
-        `%0APlease respond with availability & pricing.`;
+      let msg = `New enquiry for Waknaghat Hills PG`+
+        `Name: ${data.name}`+
+        `Phone: ${data.phone}`+
+        (data.email?`Email: ${data.email}`:'')+
+        (data.guests?`Guests: ${data.guests}`:'')+
+        (data.checkin?`Check-in: ${data.checkin}`:'')+
+        (data.stay?`Stay: ${data.stay}`:'')+
+        (data.message?`Notes: ${data.message}`:'')+
+        `Please respond with availability & pricing.`;
       return msg;
     }
 
@@ -206,4 +206,5 @@
   </script>
 </body>
 </html>
+
 
