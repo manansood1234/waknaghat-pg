@@ -236,7 +236,7 @@
       if(!data.name){ status.innerHTML = '<div class="error">Please enter your name.</div>'; return }
       if(!validatePhone(data.phone)){ status.innerHTML = '<div class="error">Please enter a valid phone number.</div>'; return }
       if(!OWNER_PHONE || OWNER_PHONE.includes('X')){
-        status.innerHTML = '<div class="error">Site not configured — replace OWNER_PHONE in script with owner's WhatsApp number (e.g. 919812345678).</div>';
+        status.innerHTML = '<div class="error">Site not configured — replace OWNER_PHONE in script with owners WhatsApp number (e.g. 919812345678).</div>';
         return;
       }
 
@@ -266,3 +266,4 @@
   </script>
 </body>
 </html>
+
