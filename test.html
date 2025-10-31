@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Waknaghat Hills PG — Enquiry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#0f766e; /* teal */
+      --muted:#6b7280;
+      --card:#ffffff;
+      --bg:#f7f9fb;
+      --glass: rgba(255,255,255,0.6);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#0f172a}
+    body{background:linear-gradient(180deg,#e6f1ef 0%, #f7fbfd 100%);display:flex;align-items:center;justify-content:center;padding:28px}
+
+    .container{width:100%;max-width:980px;background:var(--card);border-radius:14px;box-shadow:0 10px 30px rgba(15,23,42,0.08);overflow:hidden;display:grid;grid-template-columns:1fr 420px}
+    @media (max-width:900px){.container{grid-template-columns:1fr;padding:0} .right{order:2} .left{order:1}}
+
+    .left{padding:36px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#083344);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    h1{margin:12px 0 6px;font-size:20px}
+    p.lead{margin:0;color:var(--muted)}
+
+    form{margin-top:22px;display:grid;gap:12px}
+    .row{display:flex;gap:12px}
+    .col{flex:1}
+    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+    input[type="text"], input[type="tel"], input[type="email"], input[type="date"], select, textarea{
+      width:100%;padding:10px 12px;border-radius:8px;border:1px solid #e6eef0;background:var(--glass);outline:none;font-size:14px;color:#071028
+    }
+    textarea{min-height:96px;resize:vertical}
+    .muted{font-size:13px;color:var(--muted)}
+
+    .actions{display:flex;gap:12px;align-items:center;margin-top:6px}
+    .btn{padding:10px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-ghost{background:transparent;border:1px solid #e6eef0}
+
+    .right{background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#f7fbfd"/><stop offset="1" stop-color="#e6f1ef"/></linearGradient></defs><rect width="100%" height="100%" fill="url(%23g)"/></svg>');padding:28px;display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:center}
+    .photo{width:100%;height:220px;border-radius:12px;background-image:linear-gradient(180deg, rgba(0,0,0,0.14), rgba(0,0,0,0.05)), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=cf3b2b9b5c6848f3d4c8b2ac7b3fd3a8');background-size:cover;background-position:center;box-shadow:0 8px 30px rgba(2,6,23,0.06) }
+    .info-card{width:100%;background:linear-gradient(180deg, rgba(255,255,255,0.8), rgba(255,255,255,0.6));padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.04)}
+    .meta{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+
+    .small{font-size:13px;color:var(--muted)}
+    .success{padding:10px;border-radius:8px;background:#eef9f6;color:#05665d}
+    .error{padding:10px;border-radius:8px;background:#fff1f0;color:#9b2c2c}
+
+    footer{padding:14px;text-align:center;font-size:13px;color:var(--muted)}
+
+    .note{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container" role="main">
+    <div class="left">
+      <div class="brand">
+        <div class="logo">WH</div>
+        <div>
+          <div class="small">Waknaghat Hills</div>
+          <div class="muted">Paying Guest / Homestay near Waknaghat, Himachal Pradesh</div>
+        </div>
+      </div>
+
+      <h1>Book / Enquiry Form</h1>
+      <p class="lead">Drop your details and we'll get back to you. Leads are sent directly over WhatsApp to the property owner for fastest response.</p>
+
+      <form id="leadForm" autocomplete="on">
+        <div class="row">
+          <div class="col">
+            <label for="name">Full name *</label>
+            <input id="name" name="name" type="text" placeholder="e.g. Rahul Sharma" required />
+          </div>
+          <div class="col">
+            <label for="phone">Phone number *</label>
+            <input id="phone" name="phone" type="tel" placeholder="10-digit mobile (India)" required />
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="optional" />
+          </div>
+          <div class="col">
+            <label for="guests">No. of guests</label>
+            <select id="guests" name="guests">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4+">4+</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label for="checkin">Preferred check-in date</label>
+            <input id="checkin" name="checkin" type="date" />
+          </div>
+          <div class="col">
+            <label for="stay">Preferred stay (nights)</label>
+            <input id="stay" name="stay" type="text" placeholder="e.g. 3 nights" />
+          </div>
+        </div>
+
+        <div>
+          <label for="message">Message / Requirements</label>
+          <textarea id="message" name="message" placeholder="Any preferences, arrival time, etc."></textarea>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Send enquiry via WhatsApp</button>
+          <button type="button" id="previewBtn" class="btn btn-ghost">Preview message</button>
+          <div style="flex:1"></div>
+        </div>
+
+        <div id="status" aria-live="polite" style="margin-top:10px"></div>
+
+      </form>
+
+      <p class="note" style="margin-top:16px">Note: Replace the OWNER_PHONE constant in the script with the property owner's WhatsApp number in international format (for India: <code>91XXXXXXXXXX</code>) for messages to be delivered.</p>
+
+    </div>
+
+    <aside class="right">
+      <div class="photo" role="img" aria-label="Waknaghat hills image"></div>
+
+      <div class="info-card">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <div style="font-weight:700">Waknaghat Hills PG</div>
+            <div class="small">Scenic homestay with mountain views</div>
+          </div>
+          <div style="text-align:right">
+            <div style="font-weight:700">From ₹699/night</div>
+            <div class="small">Near Waknaghat, Solan district</div>
+          </div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid #edf5f4;margin:12px 0">
+
+        <div class="meta">
+          <div>
+            <div class="small">Rooms</div>
+            <div style="font-weight:600">Private & shared</div>
+          </div>
+          <div>
+            <div class="small">Facilities</div>
+            <div style="font-weight:600">Wifi · Parking · Hot water</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="width:100%;margin-top:14px">
+        <div class="small">Quick tips</div>
+        <ul style="margin:8px 0 0 18px;color:var(--muted);font-size:14px;line-height:1.5">
+          <li>Fill name & phone for fastest response</li>
+          <li>Owner will receive a WhatsApp message with the lead</li>
+          <li>For privacy, avoid posting sensitive documents here</li>
+        </ul>
+      </div>
+
+    </aside>
+  </div>
+
+  <footer>
+    Built for Waknaghat — leads sent over WhatsApp.
+  </footer>
+
+  <script>
+    // ========== CONFIG ==========
+    // IMPORTANT: Put the owner's WhatsApp number here in **international format without +**
+    // Example for India: 919812345678
+    const OWNER_PHONE = '918894082157'; // <-- REPLACE this
+
+    // ========== END CONFIG ==========
+
+    const form = document.getElementById('leadForm');
+    const status = document.getElementById('status');
+    const previewBtn = document.getElementById('previewBtn');
+
+    function sanitize(text){ return String(text||'').trim(); }
+
+    function validatePhone(phone){
+      // allow +, spaces, hyphens; for basic check ensure 10-13 digits
+      const digits = (phone||'').replace(/\D/g,'');
+      return digits.length >= 10 && digits.length <= 13;
+    }
+
+    function buildMessage(data){
+      const lines = [];
+      lines.push("New enquiry for Waknaghat Hills PG");
+      lines.push('');
+      lines.push(`Name: ${data.name}`);
+      lines.push(`Phone: ${data.phone}`);
+      if(data.email) lines.push(`Email: ${data.email}`);
+      if(data.guests) lines.push(`Guests: ${data.guests}`);
+      if(data.checkin) lines.push(`Check-in: ${data.checkin}`);
+      if(data.stay) lines.push(`Stay: ${data.stay}`);
+      if(data.message) lines.push('Notes: ' + data.message);
+      lines.push('');
+      lines.push('Please respond with availability & pricing.');
+      return lines.join("\n");
+    }
+
+    function openWhatsAppWithMessage(owner, text){
+      const encoded = encodeURIComponent(text);
+      // Use wa.me short link — must be international number without + or leading zeros
+      const waUrl = `https://wa.me/${owner}?text=${encoded}`;
+      window.open(waUrl, '_blank');
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      status.innerHTML = '';
+
+      const data = {
+        name: sanitize(document.getElementById('name').value),
+        phone: sanitize(document.getElementById('phone').value),
+        email: sanitize(document.getElementById('email').value),
+        guests: sanitize(document.getElementById('guests').value),
+        checkin: sanitize(document.getElementById('checkin').value),
+        stay: sanitize(document.getElementById('stay').value),
+        message: sanitize(document.getElementById('message').value)
+      };
+
+      // validation
+      if(!data.name){ status.innerHTML = '<div class="error">Please enter your name.</div>'; return }
+      if(!validatePhone(data.phone)){ status.innerHTML = '<div class="error">Please enter a valid phone number.</div>'; return }
+      if(!OWNER_PHONE || OWNER_PHONE.includes('X')){
+        status.innerHTML = '<div class="error">Site not configured — replace OWNER_PHONE in script with owner's WhatsApp number (e.g. 919812345678).</div>';
+        return;
+      }
+
+      const message = buildMessage(data);
+
+      // Optionally show the composed message briefly
+      status.innerHTML = '<div class="success">Opening WhatsApp with your enquiry — the owner will receive it as a message. If nothing happens, make sure pop-ups are allowed.</div>';
+      openWhatsAppWithMessage(OWNER_PHONE, message);
+    });
+
+    previewBtn.addEventListener('click', ()=>{
+      const data = {
+        name: sanitize(document.getElementById('name').value) || 'Your name',
+        phone: sanitize(document.getElementById('phone').value) || 'Your phone',
+        email: sanitize(document.getElementById('email').value) || '',
+        guests: sanitize(document.getElementById('guests').value) || '',
+        checkin: sanitize(document.getElementById('checkin').value) || '',
+        stay: sanitize(document.getElementById('stay').value) || '',
+        message: sanitize(document.getElementById('message').value) || ''
+      };
+      const message = buildMessage(data);
+      // show modal-like small window
+      const w = window.open('', 'preview', 'width=520,height=420');
+      w.document.write(`<pre style="white-space:pre-wrap;font-family:Inter,Arial;padding:16px">${message}</pre>`);
+    });
+
+  </script>
+</body>
+</html>
