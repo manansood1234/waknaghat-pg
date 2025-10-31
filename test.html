@@ -196,7 +196,7 @@
       if(!data.fullname){status.textContent='Please enter your name.';return;}
       if(!validatePhone(data.phone)){status.textContent='Please enter valid phone number.';return;}
       if(OWNER_PHONE.includes('X')){status.textContent='Replace OWNER_PHONE with owner number.';return;}
-      print(buildMessage(data))
+      console.log(buildMessage(data))
       window.open(`https://wa.me/${OWNER_PHONE}?text=${buildMessage(data)}`,'_blank');
     });
 
@@ -207,6 +207,7 @@
   </script>
 </body>
 </html>
+
 
 
 
