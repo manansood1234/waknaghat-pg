@@ -128,7 +128,7 @@
 
       <form id="leadForm">
         <label>Full Name*</label>
-        <input type="text" id="name" required placeholder="e.g. Rahul Sharma" />
+        <input type="text" id="fullname" required placeholder="e.g. Rahul Sharma" />
 
         <label>Phone Number*</label>
         <input type="tel" id="phone" required placeholder="10-digit mobile" />
@@ -176,7 +176,7 @@
 
     function buildMessage(data){
       let msg = `New enquiry for Waknaghat Hills PG`+
-        `Name: ${data.name}`+
+        `Name: ${data.fullname}`+
         `Phone: ${data.phone}`+
         (data.email?`Email: ${data.email}`:'')+
         (data.guests?`Guests: ${data.guests}`:'')+
@@ -193,18 +193,19 @@
         name:sanitize(name.value),phone:sanitize(phone.value),email:sanitize(email.value),
         guests:sanitize(guests.value),checkin:sanitize(checkin.value),stay:sanitize(stay.value),message:sanitize(message.value)
       };
-      if(!data.name){status.textContent='Please enter your name.';return;}
+      if(!data.fullname){status.textContent='Please enter your name.';return;}
       if(!validatePhone(data.phone)){status.textContent='Please enter valid phone number.';return;}
       if(OWNER_PHONE.includes('X')){status.textContent='Replace OWNER_PHONE with owner number.';return;}
       window.open(`https://wa.me/${OWNER_PHONE}?text=${buildMessage(data)}`,'_blank');
     });
 
     document.getElementById('previewBtn').addEventListener('click',()=>{
-      const data={name:sanitize(name.value)||'Name',phone:sanitize(phone.value)||'Phone',email:sanitize(email.value),guests:sanitize(guests.value),checkin:sanitize(checkin.value),stay:sanitize(stay.value),message:sanitize(message.value)};
+      const data={fullname:sanitize(fullname.value)||'Name',phone:sanitize(phone.value)||'Phone',email:sanitize(email.value),guests:sanitize(guests.value),checkin:sanitize(checkin.value),stay:sanitize(stay.value),message:sanitize(message.value)};
       alert(decodeURIComponent(buildMessage(data)));
     });
   </script>
 </body>
 </html>
+
 
 
